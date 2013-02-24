@@ -1,7 +1,6 @@
-OSCON 2012 Clojure Tutorial
+# Clojure Tutorial
 
-Developer Bootstrap
-========================================
+## Developer Bootstrap
 
 You will need the following:
 
@@ -15,8 +14,7 @@ Download additional dependencies by running:
     script/bootstrap
 
 
-Building
-========================================
+## Building
 
 Run:
 
@@ -26,8 +24,7 @@ Open the HTML file `src/org/index.html` in a web browser and
 type `t` to start the presentation.
 
 
-Building for Distribution
--------------------------
+### Building for Distribution
 
 You can build a ZIP file for distribution to students that includes
 the slides. Run these commands:
@@ -39,8 +36,7 @@ the slides. Run these commands:
 The ZIP file will be in `out/`.
 
 
-Exporting from Emacs
-========================================
+## Exporting from Emacs
 
 Optionally, you can run the HTML export directly from Emacs.
 
@@ -58,8 +54,7 @@ In Emacs, open the file `src/org/index.org`. If you are
 prompted about local variables, type `!`. Type `C-c C-e h` to export
 the HTML.
 
-Org-mode Hints
-========================================
+## Org-mode Hints
 
 See `lib/org-html-slides/README.md` for more information about
 controlling and formatting the presentation.
@@ -74,8 +69,7 @@ Add this line somewhere in your .org file:
 then you can type `C-c C-c s RET` on a headline to quickly add the :slide: tag.
 
 
-Source Code
---------------------
+### Source Code
 
 Create code blocks like this:
 
@@ -90,8 +84,7 @@ Type `<s` and press TAB at the beginning of a line to insert a
 begin_src/end_src block.
 
 
-Testing
---------------------
+### Testing
 
 The [Window Resizer](https://chrome.google.com/webstore/detail/kkelicaakdanhinjdeammmilcgefonfh)
 extension for Google Chrome can simulate various screen resolutions.
