@@ -9,9 +9,8 @@
 #+BEGIN_HTML
 <img id="clojure-logo" src="../images/Clojure.svg" alt="../images/clojure-glyph.svg" width="300" height="300" />
 <p class="presenters">
-Alan Dipert & Clinton Dreisbach<br />
-Relevance, Inc.<br />
-thinkrelevance.com
+Presented by Clinton Dreisbach<br />
+Written by Alan Dipert & Clinton Dreisbach<br />
 </p>
 #+END_HTML
 
@@ -24,16 +23,12 @@ thinkrelevance.com
 #+INCLUDE "functions.org" :minlevel 2
 ** Names and Namespaces                                               :slide:
 #+INCLUDE "names-and-namespaces.org" :minlevel 2
-
 ** Working with Java                                                  :slide:
 #+INCLUDE "java.org" :minlevel 2
 ** Collections                                                        :slide:
 #+INCLUDE "collections.org" :minlevel 2
 ** Flow Control                                                       :slide:
 #+INCLUDE "flow-control.org" :minlevel 2
-** HACK LIFE                                                          :slide:
-***** Clinton: @crnixon
-***** Alan: @alandipert
 * End
 #+COMMENT Bulleted lists start at outline level 4
 #+OPTIONS: h:4 toc:2
