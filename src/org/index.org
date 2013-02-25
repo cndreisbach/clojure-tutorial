@@ -1,4 +1,4 @@
-#+TITLE: Computing with Clojure
+1#+TITLE: Computing with Clojure
 
 #+BEGIN_HTML
 <p>Press <strong>T</strong> to toggle slide-show mode.</p>

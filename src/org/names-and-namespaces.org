@@ -37,7 +37,6 @@
 #+end_src
 ** =require=                                                          :slide:
 *** Loads the namespace if not already loaded
-**** Argument is a symbol, must be quoted
 *** Have to refer to things with fully-qualified names
 
 #+begin_src clojure
@@ -51,7 +50,7 @@
 
 ** =require :as=                                                      :slide:
 *** Loads the namespace if not already loaded
-**** Argument is a vector, must be quoted
+**** Uses a vector to contain arguments
 *** Aliases the namespace to alternate name
 
 #+begin_src clojure
@@ -64,43 +63,45 @@
   ;;=> #{1 2 3 4}
 #+end_src
 
-** =use=                                                              :slide:
+** =require :refer=                                                   :slide:
 *** Loads the namespace if not already loaded
-**** Argument is a symbol, must be quoted
-*** Refers all symbols into current namespace
-*** Warns when symbols clash
+**** Uses a vector to contain arguments
+*** Refers specified symbols into current namespace
 
-** =use= Example                                                      :slide:
 #+begin_src clojure
   (ns my-ns
-    (:use clojure.string))
-  ;; WARNING: reverse already refers
-  ;; to: #'clojure.core/reverse in
-  ;; namespace: user, being reversed
-  ;; by: #'clojure.string/reverse
-  ;; ...
+    (:require [clojure.string :refer [upper-case lower-case]]))
   ;;=> nil
   
-  (reverse "hello")
-  ;;=> "olleh"
+  ;; "lower-case" refers to "clojure.string/lower-case"
+  (lower-case "Hello World!")
+  ;;=> "hello world!"
+  (upper-case "Hello World!")
+  ;;=> "HELLO WORLD!"
 #+end_src
 
-** =use :only=                                                        :slide:
+** =require :refer :all=                                              :slide:
 *** Loads the namespace if not already loaded
-**** Argument is a vector, must be quoted
-*** Refers only specified symbols into current namespace
+**** Uses a vector to contain arguments
+*** Refers all symbols into current namespace
 
 #+begin_src clojure
   (ns my-ns
-    (:use [clojure.string :only (join)]))
+    (:require [clojure.string :refer :all]))
+  ;; WARNING: replace already refers to: #'clojure.core/replace in namespace: my-ns, 
+  ;; being replaced by: #'clojure.string/replace
+  ;; WARNING: reverse already refers to: #'clojure.core/reverse in namespace: my-ns, 
+  ;; being replaced by: #'clojure.string/reverse
   ;;=> nil
-  (join "," [1 2 3])
-  ;;=> "1,2,3"
+  
+  ;; "string" refers to "clojure.string/split"
+  (split "Hello World!" #" ")
+  ;;=> ["Hello" "World!"]
 #+end_src
 
 ** =import=                                                           :slide:
 *** Makes Java classes available w/o package prefix in current namespace
-**** Argument is a list, quoting is optional
+**** Argument is a list
 *** Does not support aliases/renaming
 *** Does not support Java's =import *=
 
@@ -114,15 +115,13 @@
 
 ** =ns= Complete Example                                              :slide:
 #+begin_src clojure
-  (ns name
-    (:require [some.ns.foo :as foo]
-              [other.ns.bar :as bar])
-    (:use [this.ns.baz :only (a b c)]
-          [that.ns.quux :only (d e f)])
+  (ns my-app.core
+    (:require [clojure.string :as str]
+              [clojure.set :refer [difference intersection]]
+              [clojure.pprint :refer :all])
     (:import (java.io File FileWriter)
              (java.net URL URI)))
 #+end_src
-
 
 ** Namespaces and Files                                               :slide:
 *** For require/use to work, have to find code defining namespace
