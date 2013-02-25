@@ -8,16 +8,15 @@
 *** Functional, emphasis on immutability
 *** Support concurrency & managed state
 *** Expose and embrace host platforms
-** Why Another Lisp?                                                  :slide:
-*** Limits to change post standardization
-*** Core data structures mutable, not extensible
-*** No concurrency in specs
-*** Standard Lisps are their own platforms
-*** Good implementations already exist for JVM
+** Why (Another) Lisp?                                                :slide:
+*** Simple and easy to extend
+*** Other Lisps don't meet our needs
+**** Limits to change post standardization
+**** Core data structures mutable, not extensible
+**** No concurrency in specs
 ** Why the JVM?                                                       :slide:
 *** VM, not OS, is target platform of the future
 **** Type system
-**** Dynamic enforcement and safety
 **** Garbage collection
 **** Libraries
 **** Bytecode, just-in-time compilation
@@ -84,14 +83,16 @@
 *** Note: commas are whitespace
 
 ** Reader Macros                                                      :slide:
-| Reader Macro    | Expansion                   |
-|-----------------+-----------------------------|
-| 'foo            | (quote foo)                 |
-| #'foo           | (var foo)                   |
-| @foo            | (deref foo)                 |
-| #(+ % 5)        | (fn [x] (+ x 5))            |
+*** Reader macros expand into full forms
+#+begin_src clojure
+  'foo                ; (quote foo)
+  #'foo               ; (var foo)
+  @foo                ; (deref foo)
+  #(+ % 5)            ; (fn [x] (+ x 5))
+#+end_src
 
-* Discoverability of the Environment
+** Discoverability                                                    :slide:
+*** Clojure provides facilities for inspecting the environment
 ** doc                                                                :slide:
 #+begin_src clojure
   user=> (use 'clojure.repl)
