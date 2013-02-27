@@ -32,6 +32,19 @@
 [[file:../images/traditional-evaluation.svg]]
 ** Clojure Evaluation                                                 :slide:
 [[file:../images/clojure-interactive-evaluation.svg]]
+* Leiningen
+** A Brief Digression about Leiningen                                 :slide:
+*** Leiningen is a tool for automating Clojure projects. 
+It is like Make for Clojure, but with built-in tasks for most of what 
+you want to do.
+*** Most of what you want to do:
+**** =lein new=: Start a new project
+**** =lein repl=: Start a REPL
+**** =lein test=: Run the tests
+**** =lein edit=: Start an editing session. 
+This does not come with Leiningen, but is a plugin called Catnip. 
+We have this set up for the tutorial.
+
 * Basic Syntax
 ** Operation Forms                                                    :slide:
 #+begin_src clojure
