@@ -1,6 +1,6 @@
 [submodule "lib/org-mode"]
 	path = lib/org-mode
-	url = https://orgmode.org/org-mode.git
+	url = https://github.com/jwiegley/org-mode.git
 [submodule "lib/clojure-mode"]
 	path = lib/clojure-mode
 	url = https://github.com/technomancy/clojure-mode.git
