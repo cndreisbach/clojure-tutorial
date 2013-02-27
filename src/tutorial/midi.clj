@@ -29,6 +29,4 @@
       (Thread/sleep duration)
       (.noteOff channel note)))))
 
-(count (.getChannels (MidiSystem/getSynthesizer)))
-
 (play-a-note 60 127 3000)
