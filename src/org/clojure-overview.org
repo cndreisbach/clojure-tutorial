@@ -182,6 +182,6 @@ We have this set up for the tutorial.
 *** Transform the following expression into Clojure code: (42 + 17 * 9) / 12
 
 #+begin_src clojure
-  user=> (/ (* (+ 42 17) 9) 12)
-  ;=> 177/4
+  user=> (/ (+ (* 17 9) 42) 12)
+  ;=> 65/4
 #+end_src

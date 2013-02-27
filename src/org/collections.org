@@ -52,7 +52,7 @@ file:../images/collections-structural-sharing.svg
 - Sequential
   - List, Vector
 - Associative
-  - Map, Vector
+  - Map, Set
 - Both types support declarative destructuring
 
 * Sequential
